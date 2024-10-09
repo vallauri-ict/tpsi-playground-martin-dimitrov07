@@ -1,0 +1,37 @@
+.gender{
+	text-align:center;
+}
+
+.gender select{
+	width:100px;
+	margin-left:10px;
+}
+
+table{
+	width : 1020px;
+	border : 1px solid black;
+	margin : 20px auto;
+}
+
+table tr{
+	height:40px;
+}
+
+table tr th{
+	background-color:#ccc;
+}
+
+table tr td{
+	border:1px solid #ddd;
+}
+
+table tr td img{
+	height:40px;
+}
+
+.inserisci{
+	width:180px;
+	height:30px;
+	display:block;
+	margin : 16px auto;
+}
