@@ -43,6 +43,33 @@ window.onload=function()
 		caricaTabella();
 	}
 
+	for (const btn of btns) {
+		btn.addEventListener("click", navigate);
+	}
+
+	function navigate(){
+		switch(this.value)
+		{
+			case "Primo":
+				currentPage = 0;
+				break;
+			case "Indietro":
+				currentPage--;
+				break;
+			case "Avanti":
+				currentPage++;
+				break;
+			case "Ultimo":
+				currentPage = lastPage();
+				break;
+		}
+	}
+
+	function lastPage(){
+		return Math.ceil(xmlRoot.children[gender].children.length / 6);
+		//arrotonda all'intero superiore
+	}
+
 	function caricaIntestazione(){
 		const thead = document.createElement("thead");
 		table.appendChild(thead);
