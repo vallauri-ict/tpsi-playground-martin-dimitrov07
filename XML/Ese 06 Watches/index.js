@@ -7,5 +7,32 @@ window.onload=function () {
 	let lstGender = document.querySelector(".gender select")
 	let btnInserisci = document.getElementsByTagName("button")[0]
 
+	let xml = localStorage.getItem("watches_xml");
+	if(!xml)
+	{
+		xml = orologi;
+	}
+	const parser = new DOMParser();
+	const xmlDOC = parser.parseFromString(xml, "text/xml");
+	const xmlRoot = xmlDOC.firstElementChild;
 
+	createHeaders();
+	loadTable();
+
+	function createHeaders(){
+		const tr = document.createElement("tr");
+		thead.appendChild(tr);
+
+		for (const header of headers) {
+			const th = document.createElement("th");
+			tr.appendChild(th);
+			th.textContent = header;
+		}
+	}
+
+	function loadTable(){
+		tbody.innerHTML = "";
+
+
+	}
 }
