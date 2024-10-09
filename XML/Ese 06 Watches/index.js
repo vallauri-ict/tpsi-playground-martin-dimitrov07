@@ -33,6 +33,47 @@ window.onload=function () {
 	function loadTable(){
 		tbody.innerHTML = "";
 
+		let watchesList = xmlRoot.querySelectorAll("catalog_item");
+
+		for (const item of watchesList) {
+			let gender = item.getAttribute("gender");
+
+			//let models = item.querySelectorAll("model");
+			let models = item.children;
+			for (const model of models) {
+				let code = model.querySelector("code").textContent;
+				let price = model.querySelector("price").textContent;
+				let watches = model.querySelector("watches");
+
+				for (const colorWatch of watches.children) {
+					let color = colorWatch.textContent;
+					let image = colorWatch.getAttribute("image");
+
+					let tr = document.createElement("tr");
+					tbody.appendChild(tr);
+
+					let td = document.createElement("td");
+					tr.appendChild(td);
+					td.textContent = gender;
+
+					td = document.createElement("td");
+					tr.appendChild(td);
+					td.textContent = code;
+
+					td = document.createElement("td");
+					tr.appendChild(td);
+					td.textContent = price;
+
+					td = document.createElement("td");
+					tr.appendChild(td);
+					td.textContent = color;
+
+					td = document.createElement("td");
+					tr.appendChild(td);
+					td.textContent = image;
+				}
+			}
+		}
 
 	}
 }
