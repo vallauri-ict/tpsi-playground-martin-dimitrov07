@@ -80,7 +80,8 @@ window.onload=function()
 			td.style.padding = "5px";
 			td.style.backgroundOrigin = "content-box" //serve a far sì che l'immagine non si espandi nel padding
 			td.addEventListener("click", function(){ showDetails(person); });
-			//td.person = person;
+			//2 METODO EQUIVALENTE
+			//td.person = person; attributo nascosto usando this.person
 
 			td = document.createElement("td");
 			tr.appendChild(td);
@@ -89,7 +90,8 @@ window.onload=function()
 			td.style.backgroundRepeat = "no-repeat";
 			td.style.padding = "5px";
 			td.style.backgroundOrigin = "content-box" //serve a far sì che l'immagine non si espandi nel padding
-			
+			td.addEventListener("click", deletePerson);
+			td.person = person;
 		}
 	}
 
@@ -108,6 +110,14 @@ window.onload=function()
 		p = document.createElement("p");
 		details.appendChild(p);
 		p.textContent = "phone: " + person.querySelector("phone").textContent;
+	}
+
+	function deletePerson(){
+		let person = this.person;
+
+		person.remove();
+		caricaTabella();
+		details.style.display = "none";
 	}
 
 } 
