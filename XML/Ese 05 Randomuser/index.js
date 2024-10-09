@@ -25,7 +25,8 @@ window.onload=function()
 	let xmlRoot = xmlDOC.firstElementChild;
 
 	caricaIntestazione();
-	caricaTabella();
+	loadTable();
+	manageBtns();
 
 	for (const opt of opts) {
 		opt.addEventListener("click", switchGender);
@@ -40,7 +41,8 @@ window.onload=function()
 
 		details.style.display = "none";
 		currentPage = 0;
-		caricaTabella();
+		loadTable();
+		manageBtns();
 	}
 
 	for (const btn of btns) {
@@ -63,10 +65,35 @@ window.onload=function()
 				currentPage = lastPage();
 				break;
 		}
+
+		manageBtns();
+		loadTable();
+		details.style.display = "none";
 	}
 
+	function manageBtns(){
+		if(currentPage == 0)
+		{
+			btns[1].disabled = true;
+			btns[2].disabled = false;
+		}
+		else if(currentPage == (lastPage()))
+		{
+			btns[1].disabled = false;
+			btns[2].disabled = true;
+		}
+		else
+		{
+			btns[1].disabled = false;
+			btns[2].disabled = false;
+		}
+
+		nPag.textContent = (currentPage + 1) + "/" + (lastPage() + 1);		
+	}
+
+	//restituisce l'indice dell'ultima pagina
 	function lastPage(){
-		return Math.ceil(xmlRoot.children[gender].children.length / 6);
+		return Math.ceil(xmlRoot.children[gender].children.length / 6) - 1;
 		//arrotonda all'intero superiore
 	}
 
@@ -85,7 +112,7 @@ window.onload=function()
 		table.appendChild(tbody);
 	}
 	
-	function caricaTabella(){
+	function loadTable(){
 		tbody.innerHTML = "";
 
 		let firstRecord = currentPage * 6;
@@ -159,7 +186,13 @@ window.onload=function()
 		let person = this.person;
 
 		person.remove();
-		caricaTabella();
+		loadTable();
+		if(currentPage > 0 && tbody.innerHTML == "")
+		{
+			currentPage--;
+			loadTable();
+		}
+		manageBtns();
 		details.style.display = "none";
 	}
 
