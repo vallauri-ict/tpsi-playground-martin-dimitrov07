@@ -27,6 +27,22 @@ window.onload=function()
 	caricaIntestazione();
 	caricaTabella();
 
+	for (const opt of opts) {
+		opt.addEventListener("click", switchGender);
+	}
+
+	function switchGender(){
+		let selectedGender = this.value;
+		if(selectedGender == "male")
+			gender = 0;
+		else
+			gender = 1;
+
+		details.style.display = "none";
+		currentPage = 0;
+		caricaTabella();
+	}
+
 	function caricaIntestazione(){
 		const thead = document.createElement("thead");
 		table.appendChild(thead);
