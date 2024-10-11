@@ -35,3 +35,7 @@ table tr td img{
 	display:block;
 	margin : 16px auto;
 }
+
+table td{
+	text-align: center;
+}

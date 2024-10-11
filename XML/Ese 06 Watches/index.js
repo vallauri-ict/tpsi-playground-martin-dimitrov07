@@ -17,7 +17,15 @@ window.onload=function () {
 	const xmlRoot = xmlDOC.firstElementChild;
 
 	createHeaders();
-	loadTable();
+	loadTable("");
+
+	lstGender.addEventListener("change", function(){
+		loadTable(lstGender.value);
+	})
+
+	btnInserisci.addEventListener("click", function(){
+		window.location.href = "./inserisci.html";
+	});
 
 	function createHeaders(){
 		const tr = document.createElement("tr");
@@ -30,7 +38,7 @@ window.onload=function () {
 		}
 	}
 
-	function loadTable(){
+	function loadTable(selectedGender){
 		tbody.innerHTML = "";
 
 		let watchesList = xmlRoot.querySelectorAll("catalog_item");
@@ -38,40 +46,45 @@ window.onload=function () {
 		for (const item of watchesList) {
 			let gender = item.getAttribute("gender");
 
-			//let models = item.querySelectorAll("model");
-			let models = item.children;
-			for (const model of models) {
-				let code = model.querySelector("code").textContent;
-				let price = model.querySelector("price").textContent;
-				let watches = model.querySelector("watches");
+			if(selectedGender == "" || gender == selectedGender)
+			{
+				//let models = item.querySelectorAll("model");
+				let models = item.children;
+				for (const model of models) {
+					let code = model.querySelector("code").textContent;
+					let price = model.querySelector("price").textContent;
+					let watches = model.querySelector("watches");
 
-				for (const colorWatch of watches.children) {
-					let color = colorWatch.textContent;
-					let image = colorWatch.getAttribute("image");
+					for (const colorWatch of watches.children) {
+						let color = colorWatch.textContent;
+						let image = colorWatch.getAttribute("image");
 
-					let tr = document.createElement("tr");
-					tbody.appendChild(tr);
+						let tr = document.createElement("tr");
+						tbody.appendChild(tr);
 
-					let td = document.createElement("td");
-					tr.appendChild(td);
-					td.textContent = gender;
+						let td = document.createElement("td");
+						tr.appendChild(td);
+						td.textContent = gender;
 
-					td = document.createElement("td");
-					tr.appendChild(td);
-					td.textContent = code;
+						td = document.createElement("td");
+						tr.appendChild(td);
+						td.textContent = code;
 
-					td = document.createElement("td");
-					tr.appendChild(td);
-					td.textContent = price;
+						td = document.createElement("td");
+						tr.appendChild(td);
+						td.textContent = price;
 
-					td = document.createElement("td");
-					tr.appendChild(td);
-					td.textContent = color;
+						td = document.createElement("td");
+						tr.appendChild(td);
+						td.textContent = color;
 
-					td = document.createElement("td");
-					tr.appendChild(td);
-					td.textContent = image;
-				}
+						td = document.createElement("td");
+						tr.appendChild(td);
+						const img = document.createElement("img");
+						img.src = "./img/" + image;
+						td.appendChild(img);
+					}
+				}	
 			}
 		}
 
