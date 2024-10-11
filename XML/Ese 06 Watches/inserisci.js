@@ -27,7 +27,7 @@ window.onload=function(){
 			let gender = document.querySelector("input[type=radio]:checked").value; //pseudoselettore
 			console.log(gender);
 
-			let watchesList = xmlRoot.querySelector("catalog_item[gender=" + gender + "]");
+			let watchesGender = xmlRoot.querySelector(`catalog_item[gender="${gender}"]`);
 
 			let model = `		
 			<model>
@@ -37,6 +37,8 @@ window.onload=function(){
 					<color image="${_lstColor.value.toLowerCase()}_cardigan.jpg">${_lstColor.value}</color>
 				</watches>
 			</model>`;
+
+			watchesGender.appendChild(model);
 		}
 		else
 		{
