@@ -29,22 +29,39 @@ window.onload=function(){
 
 			let watchesGender = xmlRoot.querySelector(`catalog_item[gender="${gender}"]`);
 
-			let model = `		
-			<model>
-				<code>${_txtCode.value}</code>
-				<price>${_txtPrice.value}</price>
-				<watches>
-					<color image="${_lstColor.value.toLowerCase()}_cardigan.jpg">${_lstColor.value}</color>
-				</watches>
-			</model>`;
+			let trovato = false;
 
-			//soluzione migliore
-			const modelObj = parser.parseFromString(model, "text/xml");
-			console.log(modelObj);
+			for (const model of watchesGender.children) {
+				if(model.querySelector("code").textContent == _txtCode.value)
+				{
+					trovato = !trovato;
 
-			watchesGender.appendChild(modelObj.firstElementChild);
+					let watches = model.querySelector("watches");
 
-			//watchesGender.innerHTML += model;
+					const color = document.createElement("color");
+					color.textContent = _lstColor.value;
+					color.setAttribute("image", `${_lstColor.value.toLowerCase()}_cardigan.jpg`);
+					watches.appendChild(color);
+				}
+			}
+
+			if(!trovato)
+			{
+				let model = `		
+				<model>
+					<code>${_txtCode.value}</code>
+					<price>${_txtPrice.value}</price>
+					<watches>
+						<color image="${_lstColor.value.toLowerCase()}_cardigan.jpg">${_lstColor.value}</color>
+					</watches>
+				</model>`;
+
+				//soluzione migliore
+				const modelObj = parser.parseFromString(model, "text/xml");
+				console.log(modelObj);
+				watchesGender.appendChild(modelObj.firstElementChild);
+				//watchesGender.innerHTML += model;
+			}
 
 			let serializer = new XMLSerializer();
 			let xmlStr = serializer.serializeToString(xmlDOC);
