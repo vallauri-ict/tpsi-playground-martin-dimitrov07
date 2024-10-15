@@ -38,7 +38,23 @@ window.onload=function(){
 				</watches>
 			</model>`;
 
-			watchesGender.appendChild(model);
+			//soluzione migliore
+			const modelObj = parser.parseFromString(model, "text/xml");
+			console.log(modelObj);
+
+			watchesGender.appendChild(modelObj.firstElementChild);
+
+			//watchesGender.innerHTML += model;
+
+			let serializer = new XMLSerializer();
+			let xmlStr = serializer.serializeToString(xmlDOC);
+			localStorage.setItem("watches_xml", xmlStr);
+
+			alert("Record aggiunto correttamente");
+			window.location.href = "index.html";
+
+			//non funziona perchè è una stringa e .appendChild si aspetta un puntatore
+			//watchesGender.appendChild(model); 
 		}
 		else
 		{
