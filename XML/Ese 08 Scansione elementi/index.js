@@ -65,6 +65,14 @@ window.onload = function() {
 	function verdeLuminosita(){
 		let green = 50;
 
+		let oddElements = wrapper.querySelectorAll("li:nth-of-type(odd)");
+
+		for (const element of oddElements) {
+			element.style.backgroundColor = `rgb(0, ${green}, 0)`;
+			green+=50;
+		}
+
+		/*
 		for (const item of wrapper.children) {
 			item.style.backgroundColor = "";
 
@@ -74,6 +82,7 @@ window.onload = function() {
 				green+=50;
 			}
 		}
+		*/
 	}
 
 }
