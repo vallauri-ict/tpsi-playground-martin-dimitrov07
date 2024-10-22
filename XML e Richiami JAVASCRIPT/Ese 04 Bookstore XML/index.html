@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>XML</title>	
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="index.css">
+	<script type="application/javascript" src="bookstore.js"></script>
+	<script type="application/javascript" src="index.js"></script>
+</head>
+
+<body>
+    <header>
+		<div class="headerBtn"> Vista Elenco </div>
+		<div class="headerBtn"> Vista Dettagli </div>
+		<div class="headerBtn"> Aggiungi Nuovo </div>
+		<div class="headerBtn"> Salva su Disco </div>
+	</header>
+
+    <main class="container">
+        <h1>Book Store</h1>
+		
+		<div id="list-view"> 
+		    <div class="nBooks"> </div>
+			<table border="1">
+				<thead>			
+					<tr>
+						<th>ID</th>
+						<th>Titolo</th>
+						<th>Categoria</th>
+						<th>Lingua</th>
+						<th>Autori</th>
+						<th>Anno</th>
+						<th>Prezzo</th>
+						<th> </th>  <!-- pulsante delete -->
+					</tr>			
+				</thead>
+				<tbody id="tabLibri">
+
+				</tbody>
+			</table>			
+		</div>
+		
+		<div id="details-view">
+			<div class="details"> </div>
+			<div class="buttons">
+				<button class="button">Primo</button>
+				<button class="button">Indietro</button>
+				<span>1/4</span>
+				<button class="button">Avanti</button>
+				<button class="button">Ultimo</button>
+				<button class="button">Elimina</button>
+			</div>
+		</div>
+
+
+		<div id="add-view"> 
+			<div class="details"> </div>
+			<div class="buttons">
+				
+			</div>
+		</div>
+		
+    </main>
+
+</body>
+</html>

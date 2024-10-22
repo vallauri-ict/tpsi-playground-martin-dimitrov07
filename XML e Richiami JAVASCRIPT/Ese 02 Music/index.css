@@ -1,0 +1,10 @@
+.bi-search, .bi-people-fill {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+h1{
+	text-align:center;
+	font-size: 3.5em;
+	padding:15px;
+}
