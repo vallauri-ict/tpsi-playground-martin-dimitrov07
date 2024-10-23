@@ -71,29 +71,34 @@ function imposta(index){
 			form1.querySelector("input[type=text]").value = text;
 			break;
 		case 2:
-			let valLst1 = prompt("Inserisci il valore del select: ");
+			let valLst1 = prompt("Inserisci il value del select: ");
 			const lst1 = form1.querySelector("select");
 
+			/*
 			for (const opt of lst1.children) {
 				if(opt.textContent == valLst1.toLowerCase() || opt.value == valLst1.toLowerCase())
 					opt.selected = true;
 				else
 					opt.selected = false;
 			}
+			*/
+
+			lst1.value = valLst1; //solo per il tag select
+
 			break;
 		case 3:
 			let valChk = prompt("Inserisci il valore del checkbox: ");
 			const chks = form1.querySelectorAll("input[type=checkbox]");
 
 			for (const chk of chks) {
-				let s = chk.parentElement.textContent.trim();
+				let s = chk.parentElement.textContent.trim(); //toglie tutti gli spazi
 
 				if(s == valChk.toLowerCase() || chk.value == valChk.toLowerCase())
 					chk.checked = true;
 			}
 			break;
 		case 4:
-			let valOpt = prompt("Inserisci il valore del checkbox: ");
+			let valOpt = prompt("Inserisci il value del radio button: ");
 			const opts = form1.querySelectorAll("input[type=radio]");
 
 			for (const opt of opts) {
@@ -103,11 +108,16 @@ function imposta(index){
 			break;
 		case 5:
 			let valLst2 = prompt("Inserisci il valore del select multiple: ");
-			const lst2 = form1.querySelector("select:last-of-type");
+			const lst2 = form1.querySelector("form>select");
+
+			//console.log(lst2.length);
 
 			for (const opt of lst2.children) {
 				if(opt.textContent == valLst2.toLowerCase() || opt.value == valLst2.toLowerCase())
+				{
 					opt.selected = true;
+					console.log(opt.selected);
+				}
 			}
 			break;
 	}	 

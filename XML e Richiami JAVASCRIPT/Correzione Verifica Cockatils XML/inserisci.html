@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert</title>
+    <link rel="stylesheet" href="./inserisci.css">
+    <script type="application/javascript" src="./DB/cocktails.js"></script>
+    <script type="application/javascript" src="./DB/ingredients.js"></script>
+    <script type="application/javascript" src="./inserisci.js"></script>
+</head>
+<body>
+    <h1>Inserisci un nuovo Cocktail</h1>
+	
+
+    <label for="txtId"><b>ID:</b></label>  
+	<input type="text" id="txtId">
+	<br>
+	
+    <label for="txtName"><b>Name:</b></label> 
+	<input type="text" id="txtName">
+	<br>
+	
+    <label for="lstIngredients"><b>Main Ingredient:</b></label> 
+	<select id="lstIngredients"> </select>
+	<br>
+	
+    <label for="optAlcoholic"><b>Alcoholic:</b></label> 
+	<input type="radio" id="optAlcoholic" value="Alcoholic" checked>
+    <label for="optNotAlcoholic"><b>Not Alcoholic:</b></label> 
+	<input type="radio" id="optNotAlcoholic" value="NotAlcoholic"d>
+	<br>
+	
+	
+    <button id="btnSalva"><b>Salva</b></button>
+    <button id="btnAnnulla"><b>Annulla</b></button>
+</body>
+</html>
