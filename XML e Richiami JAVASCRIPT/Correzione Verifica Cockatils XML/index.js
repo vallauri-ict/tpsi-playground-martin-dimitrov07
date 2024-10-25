@@ -44,6 +44,10 @@ window.onload=function()
 		loadTable();
 	})
 
+	document.querySelector(".title button").addEventListener("click", function(){
+		window.location.href = "inserisci.html";
+	});
+
 	loadIngredients();
 	loadHeaders();
 	loadTable();
