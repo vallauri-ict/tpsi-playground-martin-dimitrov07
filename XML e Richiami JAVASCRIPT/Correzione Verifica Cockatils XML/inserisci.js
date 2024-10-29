@@ -34,31 +34,32 @@ window.onload = function(){
         let ids = []; //vettore di strighe semplici
 
         for (const cocktail of xmlRootCocktail.children) {
+            console.log(cocktail.querySelector("idDrink").textContent);
             ids.push(cocktail.querySelector("idDrink").textContent);
         }
 
         if(!ids.includes(id))
         {
-            const cocktail = document.createElement("drinks");
+            const cocktail = xmlDOCCocktail.createElement("drinks");
             xmlRootCocktail.appendChild(cocktail);
 
-            const idDrink = document.createElement("idDrink");
+            const idDrink = xmlDOCCocktail.createElement("idDrink");
             idDrink.textContent = id;
             cocktail.appendChild(idDrink);
 
-            const strDrink = document.createElement("strDrink");
+            const strDrink = xmlDOCCocktail.createElement("strDrink");
             strDrink.textContent = name;
             cocktail.appendChild(strDrink);
 
-            const mainIngreDrink = document.createElement("strIngredient1");
+            const mainIngreDrink = xmlDOCCocktail.createElement("strIngredient1");
             mainIngreDrink.textContent = ingre;
             cocktail.appendChild(mainIngreDrink);
 
-            const alcolDrink = document.createElement("strAlcoholic");
+            const alcolDrink = xmlDOCCocktail.createElement("strAlcoholic");
             alcolDrink.textContent = alcol;
             cocktail.appendChild(alcolDrink);
 
-            const img = document.createElement("strDrinkThumb");
+            const img = xmlDOCCocktail.createElement("strDrinkThumb");
             img.textContent = "./cocktail.jpg";
             cocktail.appendChild(img);
 
@@ -68,7 +69,7 @@ window.onload = function(){
             let xml = serializer.serializeToString(xmlDOCCocktail);
             localStorage.setItem("cocktails_xml", xml); 
 
-            //window.location.href = "index.html";
+            window.location.href = "index.html";
         }
         else
             alert("Id già esistente");
