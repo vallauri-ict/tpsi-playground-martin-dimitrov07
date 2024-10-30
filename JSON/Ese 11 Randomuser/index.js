@@ -176,11 +176,15 @@ window.onload=function()
 	function deletePerson(){
 		let selectedPerson = this.person;
 
-		
-
-		/*
 		let selectedPeople = objPeople[gender];
 
+		selectedPeople.forEach(function(person, i){
+			//if(selectedPerson == person) funziona perchè i puntatori puntano allo stesso posto (NON È SCONTATO CHE FUNZIONI SEMPRE)
+			if(JSON.stringify(selectedPerson) == JSON.stringify(person)) //funziona SEMPRE
+				selectedPeople.splice(i, 1);
+		})
+		
+		/*
 		selectedPeople.forEach(function(person, i){
 			if(selectedPerson.email == person.email)
 				selectedPeople.splice(i, 1);
