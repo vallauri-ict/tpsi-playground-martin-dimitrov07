@@ -67,7 +67,12 @@ window.onload=function()
 	}
 
 	function manageBtns(){
-		if(currentPage == 0)
+		if(lastPage() == 0)
+		{
+			btns[1].disabled = true;
+			btns[2].disabled = true;
+		}
+		else if(currentPage == 0)
 		{
 			btns[1].disabled = true;
 			btns[2].disabled = false;
@@ -88,7 +93,7 @@ window.onload=function()
 
 	//restituisce l'indice dell'ultima pagina
 	function lastPage(){
-		//return Math.ceil(xmlRoot.children[gender].children.length / 6) - 1;
+		return Math.ceil(Array.from(objPeople[gender]).length / 6) - 1;
 		//arrotonda all'intero superiore
 	}
 
@@ -114,44 +119,48 @@ window.onload=function()
 
 		let selectedPeople = objPeople[gender];
 
-		selectedPeople.forEach(function(person){
-			const tr = document.createElement("tr");
-			tbody.appendChild(tr);
-			
-			let td = document.createElement("td");
-			tr.appendChild(td);
-			td.textContent = person.name.first + " " + person.name.last;
+		selectedPeople.forEach(function(person, i){
 
-			td = document.createElement("td");
-			tr.appendChild(td);
-			td.textContent = person.location.city;
-
-			td = document.createElement("td");
-			tr.appendChild(td);
-			td.textContent = person.location.state;
-
-			td = document.createElement("td");
-			tr.appendChild(td);
-			td.textContent = person["nat"];
-
-			td = document.createElement("td");
-			tr.appendChild(td);
-			td.style.padding = "5px";
-			let img = document.createElement("img");
-			td.appendChild(img);
-			img.style.width = "30px";
-			img.src = "./img/lente.jpg";
-			img.addEventListener("click", function(){ showDetails(person); });
-
-			td = document.createElement("td");
-			tr.appendChild(td);
-			td.style.padding = "5px";
-			img = document.createElement("img");
-			td.appendChild(img);
-			img.style.width = "30px";
-			img.src = "./img/delete.png";
-			img.person = person;
-			img.addEventListener("click", deletePerson);
+			if(i >= firstRecord && i < firstRecord + 6)
+			{
+				const tr = document.createElement("tr");
+				tbody.appendChild(tr);
+				
+				let td = document.createElement("td");
+				tr.appendChild(td);
+				td.textContent = person.name.first + " " + person.name.last;
+	
+				td = document.createElement("td");
+				tr.appendChild(td);
+				td.textContent = person.location.city;
+	
+				td = document.createElement("td");
+				tr.appendChild(td);
+				td.textContent = person.location.state;
+	
+				td = document.createElement("td");
+				tr.appendChild(td);
+				td.textContent = person["nat"];
+	
+				td = document.createElement("td");
+				tr.appendChild(td);
+				td.style.padding = "5px";
+				let img = document.createElement("img");
+				td.appendChild(img);
+				img.style.width = "30px";
+				img.src = "./img/lente.jpg";
+				img.addEventListener("click", function(){ showDetails(person); });
+	
+				td = document.createElement("td");
+				tr.appendChild(td);
+				td.style.padding = "5px";
+				img = document.createElement("img");
+				td.appendChild(img);
+				img.style.width = "30px";
+				img.src = "./img/delete.png";
+				img.person = person;
+				img.addEventListener("click", deletePerson);
+			}
 		});
 		
 	}
