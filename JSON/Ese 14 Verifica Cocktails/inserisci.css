@@ -1,0 +1,33 @@
+*{
+	padding:0;
+	margin:0;
+}
+
+h1{
+	margin:25px 32px;
+}
+
+label {
+	display:inline-block;
+	width:110px;
+	margin:10px;
+	text-align:right;
+}
+
+input[type="text"], select{
+	display:inline-block;
+    margin: 10px;
+	width:100px;
+}
+
+
+button{
+	display:inline-block;
+	width:70px;
+	height:24px;
+	margin:20px 5px;
+}
+
+button:nth-of-type(1){
+	margin-left:50px;
+}

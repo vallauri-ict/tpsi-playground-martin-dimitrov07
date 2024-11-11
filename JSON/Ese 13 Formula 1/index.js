@@ -16,7 +16,7 @@ window.onload=function() {
     let scuderia = "All";
     let nazionality = [];
 
-    let json = localStorage.getItem("F1_xml");
+    let json = localStorage.getItem("F1_json");
     if(!json)
     {
         json = database;
