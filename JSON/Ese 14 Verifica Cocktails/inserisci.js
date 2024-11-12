@@ -44,17 +44,17 @@ window.onload = function()
 
         if(id != "" && !ids.includes(id))
         {
-            let drink = `{
-                "idDrink": "${id}",
-                "strDrink": "${name}",
-                "strAlcoholic": "${alcol}",
-                "strIngredient1": "${mainIngredient}",
+            let drink = {
+                "idDrink": id,
+                "strDrink": name,
+                "strAlcoholic": alcol,
+                "strIngredient1": mainIngredient,
                 "strDrinkThumb": "./cocktail.jpg"
-            }`;
+            };
 
-            const objDrink = JSON.parse(drink);
+            //const objDrink = JSON.parse(drink);
 
-            objCocktails.drinks.push(objDrink);
+            objCocktails.drinks.push(drink);
 
             let strCocktail = JSON.stringify(objCocktails);
 
