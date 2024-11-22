@@ -1,0 +1,46 @@
+
+h1{
+	margin: 20px;
+	padding: 10px;	
+}
+
+
+table{
+	background-color:#ddd;
+	margin: 20px auto;
+	padding:10px;
+	width:700px;
+	border-radius:15px;
+	border:1px solid blue;
+	border-spacing:0;
+}
+
+table tr{
+	height:36px;
+}
+
+table th{
+	text-align:left;
+	width:30%;
+	border: 1px solid #8F8F8F;
+	border-radius:2px;
+	background-color:#999;	
+}
+
+table th:last-of-type(){
+	width:10%;
+}
+
+
+button{
+	width:340px;
+	margin: 20px;
+	margin-top:0;
+	padding: 10px;
+	background-color:#ffa;
+	border-radius:5px;
+	border:1px solid #777;
+	font-weight:bold;
+	font-size:12pt;
+	cursor:pointer;
+}
