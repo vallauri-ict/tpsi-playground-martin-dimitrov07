@@ -3,25 +3,25 @@
 
 window.onload=function(){
 	
-	let tbody = document.querySelector("tbody")
+	let tbody = document.querySelector("tbody");
 	
-	document.querySelector("button").addEventListener("click", fillTable)
+	document.querySelector("button").addEventListener("click", fillTable);
 	
 	function fillTable() {		
 		let params = {"results":20, "gender":"male"}
-		let request = inviaRichiesta("GET", "/api", params)
-		request.catch(errore)
-		request.then(function(response){
-			console.log(response)
+		let request = inviaRichiesta("GET", "/api", params); //randomuser ha solo una risorsa = /api
+		request.catch(errore);
+		request.then(function(response){ //iniettata l'intera risposta HTTP
+			console.log(response);
 			
-			let people = response.data
-			console.log(people)
+			let people = response.data;
+			console.log(people);
 			
 			for (let person of people.results){
-				let tr = document.createElement("tr")
-				tbody.appendChild(tr)
-				let td = document.createElement("td")
-				tr.appendChild(td)
+				let tr = document.createElement("tr");
+				tbody.appendChild(tr);
+				let td = document.createElement("td");
+				tr.appendChild(td);
 				td.textContent = person.name.first + " " + person.name.last
 				td = document.createElement("td")
 				tr.appendChild(td)

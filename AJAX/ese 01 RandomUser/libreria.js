@@ -14,12 +14,14 @@ function inviaRichiesta(method, url, parameters={}) {
 		"timeout": 5000,
 		"responseType": "json",
 	}
+	/*
 	if(parameters instanceof FormData){
 		// i parametri rimangono così come sono e vengono inseriti nel body della http request
 		options.headers["Content-Type"]='multipart/form-data;' 
 		options["data"]=parameters     // Accept FormData, File, Blob
-	}	
-	else if(method.toUpperCase()=="GET"){
+	}
+	*/	
+	/*else*/ if(method.toUpperCase()=="GET"){
 	    options.headers["Content-Type"]='application/x-www-form-urlencoded;charset=utf-8' 
 	    options["params"]=parameters   // Accept plain object or URLSearchParams object
 	}
