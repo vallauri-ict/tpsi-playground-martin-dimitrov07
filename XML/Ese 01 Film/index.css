@@ -1,0 +1,15 @@
+.icon-user {
+    font-size: 150%;
+}
+
+#film-table i {
+    padding: 0 2px;
+}
+
+i, a {
+    cursor: pointer;
+}
+
+.bi-star, .bi-star-fill {
+    cursor: default;
+}
