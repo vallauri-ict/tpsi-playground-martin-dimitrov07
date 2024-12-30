@@ -16,7 +16,7 @@ table{
 	margin:10px auto;
 }
 
-table thead th{
+table th{
 	text-align:left;
 	background-color:#BBF;
 	padding:5px;
@@ -24,4 +24,5 @@ table thead th{
 
 table tbody td{
 	background-color:#FFB;
+	text-align: center;
 }
