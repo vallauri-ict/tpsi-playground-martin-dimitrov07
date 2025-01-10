@@ -23,7 +23,7 @@ $(document).ready(function () {
         if(users.includes($(this).val()))
             validateInput(txtUser, msgUser, "OK");
         else
-        validateInput(txtUser, users, msgUser, "Utente non valido");
+            validateInput(txtUser, users, msgUser, "Utente non valido");
     });
 
     txtPwd.on("change", function () {

@@ -1,0 +1,114 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 13px Tahoma;
+	color: #666;
+}
+
+body h1 {
+	font-size: 32px;
+	font-weight: normal;
+	margin-top:20px;
+}
+
+
+#wrapper{
+	position:relative
+}
+
+#wrapper > div {
+	padding: 5px 0 5px 16px;
+}
+
+
+/**********  HEAD  *************/
+.head {
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.head h1 span {
+	display: block;
+	color: #888;
+	font-size: 14px;
+	padding:5px;
+}
+
+
+/******  Form registrazione  ********/
+.form {
+	width: 400px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-top:20px;
+	position:absolute;
+}
+
+.form legend {
+	padding: 5px 10px;
+	font-weight: bold;
+}
+
+
+.form > div {
+	margin: 8px 0;
+	position: relative;
+	z-index: 1;
+}
+
+/* textBox */
+.form input.text {
+	width:150px;
+	border: 1px solid #666;
+	padding: 3px 6px;
+	margin: 2px;
+	background-color: transparent;
+	color: #333333;
+}
+
+/* LABEL */
+.form label {
+	width: 140px;
+	position: absolute;
+	top: 3px;
+	left: 7px;   
+	z-index: -1;   
+	color: #ccc;   
+}
+
+/* pulsante */
+.form input.submit {
+	display:inline-block;	
+	border: 1px solid #666;
+	margin-top:10px;
+	padding: 3px 6px;
+	background: #333;
+	color: #fff;
+	cursor: pointer;
+}
+
+.form > div > div {
+	display:inline-block;
+	margin-left:20px;
+}
+
+.help{
+	font-size:15pt;
+	padding: 0 16px 5px 16px;
+	background-color:#00A;
+	color:white;	
+}
+
+/******** Server  ********/
+.server{
+	float:right;
+	margin-right:20px;
+}
+
+.server img{
+	width:320px;
+}
+

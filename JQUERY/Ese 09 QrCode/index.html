@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+  
+<html>
+<head lang="it">
+    <meta charset="UTF-8">
+    <title> qrCode </title>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"> </script>
+	<!--script src="jquery.qrcode.min.js"></script-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script src="index.js"> </script>
+
+	<style>
+		#wrapper{
+			margin:10px auto;
+			width:320px;
+		}
+		#qrCode1 {
+			margin:50px;
+		    width:256px;
+		    height:256px;
+			border:1px solid #ddd;
+			transform: scale(0.8); /* per farlo di grandezza come vuoi */
+		}
+		#qrCode2 {
+		    margin:50px;
+		    width:256px;
+		    height:256px;
+			border:1px solid #ddd;
+		}
+	</style>	
+</head>
+
+<body>
+	<div id="wrapper">
+	    <h1 align="center"> Creazione qrCode </h1>
+		
+		<!-- i DIV devono essere 256 x 256 -->
+		<div id="qrCode1"> </div>
+		<div id="qrCode2"> </div>
+		
+	<div>
+</body>
+
+</html>
