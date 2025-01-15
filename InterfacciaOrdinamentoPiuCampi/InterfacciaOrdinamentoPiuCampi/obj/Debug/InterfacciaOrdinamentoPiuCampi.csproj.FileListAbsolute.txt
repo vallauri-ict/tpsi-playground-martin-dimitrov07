@@ -1,0 +1,9 @@
+C:\Users\lenovo\Desktop\4° B INF\Info\Progetti\Teoria\InterfacciaOrdinamentoPiuCampi\InterfacciaOrdinamentoPiuCampi\bin\Debug\InterfacciaOrdinamentoPiuCampi.exe.config
+C:\Users\lenovo\Desktop\4° B INF\Info\Progetti\Teoria\InterfacciaOrdinamentoPiuCampi\InterfacciaOrdinamentoPiuCampi\bin\Debug\InterfacciaOrdinamentoPiuCampi.exe
+C:\Users\lenovo\Desktop\4° B INF\Info\Progetti\Teoria\InterfacciaOrdinamentoPiuCampi\InterfacciaOrdinamentoPiuCampi\bin\Debug\InterfacciaOrdinamentoPiuCampi.pdb
+C:\Users\lenovo\Desktop\4° B INF\Info\Progetti\Teoria\InterfacciaOrdinamentoPiuCampi\InterfacciaOrdinamentoPiuCampi\obj\Debug\InterfacciaOrdinamentoPiuCampi.csproj.AssemblyReference.cache
+C:\Users\lenovo\Desktop\4° B INF\Info\Progetti\Teoria\InterfacciaOrdinamentoPiuCampi\InterfacciaOrdinamentoPiuCampi\obj\Debug\InterfacciaOrdinamentoPiuCampi.Properties.Resources.resources
+C:\Users\lenovo\Desktop\4° B INF\Info\Progetti\Teoria\InterfacciaOrdinamentoPiuCampi\InterfacciaOrdinamentoPiuCampi\obj\Debug\InterfacciaOrdinamentoPiuCampi.csproj.GenerateResource.cache
+C:\Users\lenovo\Desktop\4° B INF\Info\Progetti\Teoria\InterfacciaOrdinamentoPiuCampi\InterfacciaOrdinamentoPiuCampi\obj\Debug\InterfacciaOrdinamentoPiuCampi.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Desktop\4° B INF\Info\Progetti\Teoria\InterfacciaOrdinamentoPiuCampi\InterfacciaOrdinamentoPiuCampi\obj\Debug\InterfacciaOrdinamentoPiuCampi.exe
+C:\Users\lenovo\Desktop\4° B INF\Info\Progetti\Teoria\InterfacciaOrdinamentoPiuCampi\InterfacciaOrdinamentoPiuCampi\obj\Debug\InterfacciaOrdinamentoPiuCampi.pdb
