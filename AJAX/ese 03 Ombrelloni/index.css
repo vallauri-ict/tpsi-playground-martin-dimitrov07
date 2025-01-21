@@ -1,0 +1,97 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	text-align: center;
+	margin: 20px;
+}
+
+#wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #ddd;
+
+}
+
+label {
+	vertical-align: middle;
+	margin-right: 70px;
+}
+
+#login p{
+	color: red;
+}
+
+.button {
+	border-radius: 5px;
+	width: 200px;
+	height: 30px;
+	vertical-align: middle;
+	border: none;
+	outline: none;
+	box-shadow: 3px 3px 3px #777;
+	float: right;
+	margin-right: 20px;
+	color: #888;
+	background-color: #eee;
+	text-align: center;
+	text-decoration: none;
+}
+
+.buttonEnabled {
+	color: #eee;
+	background-color: #088;
+}
+
+.buttonEnabled:hover {
+	cursor: pointer;
+}
+
+.buttonEnabled:active {
+	background-color: #0bb;
+	box-shadow: inset 3px 3px 3px #777;
+}
+
+
+
+#mappa {
+	/* dimensione dell'immagine */
+	width: 960px;
+	height: 575px;
+	background-image: url("img/ombrelloni.png");
+	border: 1px solid #ddd;
+	margin-top: 30px;
+	margin-left: 20px;
+	position: relative;
+}
+
+.ombrellone {
+	position: absolute;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background-color: #0A0;
+}
+
+.ombrellone:hover {
+	cursor: pointer;
+}
+
+.red {
+	background-color: #A00;
+}
+
+.blue {
+	background-color: #00F;
+}
+
+.prenota {
+	display: inline-block;
+	margin: 3px;
+	position: absolute;
+	bottom: 6px;
+	right: 6px;
+}
