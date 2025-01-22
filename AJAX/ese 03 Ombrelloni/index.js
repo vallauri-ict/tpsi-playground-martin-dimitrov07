@@ -88,7 +88,56 @@ $(document).ready(function () {
    })
 
    function caricaOmbrelloni(){
-      
+      const request = inviaRichiesta("GET", "/ombrelloni");
+
+      request.catch(errore);
+      request.then(function(response){
+         console.log(response.data);
+         let ombrelloni = response.data;
+
+         _mappa.innerHTML = "";
+
+         let dataInizio = new Date(_dataInizio.value);
+         let dataFine = new Date(_dataFine.value);
+         let nGiorni = ((dataFine - dataInizio) / MMG) + 1;
+
+         let posIniziale = (dataInizio - new Date(_dataInizio.min)) / MMG;
+         let posFinale = (dataFine - new Date(_dataInizio.min)) / MMG;
+
+         let id = 1;
+
+         for (let riga = 0; riga <= RIGHE; riga++) {
+            let y = Y_OFFSET + 16 * riga;
+            for (let colonna = 0; colonna <= COLONNE; colonna++) {
+               if(colonna != 22 && riga != 9)
+               {
+                  let x = X_OFFSET + 16 * colonna - 2 * riga;
+                  const div = document.createElement("div");
+                  _mappa.appendChild(div);
+                  div.classList.add("ombrellone");
+                  div.id = id;
+                  div.style.top = y;
+                  div.style.left = x;
+                  if(IsFilled(id, posIniziale, posFinale))
+                     div.style.backgroundColor = "red";
+                  else
+                     div.addEventListener("click", gestisciOmbrellone);
+                  id++;
+               }
+            }
+            
+         }
+      })
+   }
+
+   function IsFilled(id, posI, posF)
+   {
+
+   }
+
+   function gestisciOmbrellone()
+   {
+
    }
 
 })
