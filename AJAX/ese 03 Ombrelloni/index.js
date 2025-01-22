@@ -20,6 +20,7 @@ $(document).ready(function () {
 
    let user_id;
    let ombrelloni;
+   let ombrelloniPrenotati = [];
    
    $(_login).show();
    $(_wrapper).hide();
@@ -93,7 +94,7 @@ $(document).ready(function () {
       request.catch(errore);
       request.then(function(response){
          console.log(response.data);
-         let ombrelloni = response.data;
+         ombrelloni = response.data;
 
          _mappa.innerHTML = "";
 
@@ -119,24 +120,76 @@ $(document).ready(function () {
                   div.style.top = y;
                   div.style.left = x;
                   if(IsFilled(id, posIniziale, posFinale))
-                     div.style.backgroundColor = "red";
+                     div.classList.add("red");
                   else
                      div.addEventListener("click", gestisciOmbrellone);
                   id++;
                }
             }
-            
          }
+
+         let btn = document.createElement("button");
+         _mappa.appendChild(btn);
+         btn.classList.add("button", "prenota");
+         btn.textContent = "Prenota";
+         btn.style.borderRadius = "10px";
+         btn.style.margin = "10px";
       })
    }
 
    function IsFilled(id, posI, posF)
    {
+      for (let i = posI; i <= posF; i++){
+         const pos = id -1;
+         if(ombrelloni[pos].stato[i] != 0)
+            return true;
+      }
 
+      return false;
    }
 
    function gestisciOmbrellone()
    {
+      if(this.classList.contains("blue"))
+      {
+         this.classList.remove("blue");
+         //SOLUZIONE 1
+         //let pos = ombrelloniPrenotati.indexOf(this.id);
+         //SOLUZIONE 2
+         /*
+         let thisId = this.id;
+         let pos = ombrelloniPrenotati.findIndex(function(idOmbrellone){
+            return idOmbrellone = thisId;
+         });
+         */
+         //SOLUZIONE 3 (arrow function -> non ridefinisce il this che continua a puntare all'ombrellone cliccato)
+         //se c'è un solo un parametro si possono omettere le parentesi tonde (); se ci sono 0 o più di un parametro le () sono obbligatorie
+         let pos = ombrelloniPrenotati.findIndex(idOmbrellone => {
+            return idOmbrellone = this.id;
+         })
+         ombrelloniPrenotati.splice(pos, 1);
+      }
+      else
+      {
+         this.classList.add("blue");
+         ombrelloniPrenotati.push(this.id);
+      }
+
+      let btn = _mappa.getElementsByTagName("button")[0];
+
+      if(ombrelloniPrenotati.length > 0)
+      {
+         btn.classList.add("buttonEnabled");
+         btn.addEventListener("click", prenota);
+      }
+      else
+      {
+         btn.classList.remove("buttonEnabled");
+         btn.removeEventListener("click", prenota);
+      }
+   }
+
+   function prenota(){
 
    }
 
