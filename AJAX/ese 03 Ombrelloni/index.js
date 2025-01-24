@@ -100,7 +100,6 @@ $(document).ready(function () {
 
          let dataInizio = new Date(_dataInizio.value);
          let dataFine = new Date(_dataFine.value);
-         let nGiorni = ((dataFine - dataInizio) / MMG) + 1;
 
          let posIniziale = (dataInizio - new Date(_dataInizio.min)) / MMG;
          let posFinale = (dataFine - new Date(_dataInizio.min)) / MMG;
@@ -190,7 +189,28 @@ $(document).ready(function () {
    }
 
    function prenota(){
+      let dataInizio = new Date(_dataInizio.value);
+      let dataFine = new Date(_dataFine.value);
 
+      let posIniziale = (dataInizio - new Date(_dataInizio.min)) / MMG;
+      let posFinale = (dataFine - new Date(_dataInizio.min)) / MMG;
+
+      for (const idOmbrellone of ombrelloniPrenotati) {
+         let pos = idOmbrellone - 1;
+         for (let i = posIniziale; i <= posFinale; i++) {
+            ombrelloni[pos].stato[i] = user_id;
+         }
+         
+         let request = inviaRichiesta("PATCH", "ombrelloni/" + idOmbrellone, { "stato": ombrelloni[pos].stato });
+         let count = 0;
+         request.catch(errore);
+         request.then(function(response){
+            console.log(response.data);
+            count++;
+             if(count == ombrelloniPrenotati.length)
+               alert("Prenotazione eseguita correttamente");
+         })
+      }
    }
 
 })
