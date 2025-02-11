@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Concerti 2022</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon"  href="img/icoVallauri.png" type="image/png" />
+	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="index.css" />
+
+	<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- l'utilizzo del dropdown menu richiede anche popper presente solo dentro bundle.js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.7/sweetalert2.all.min.js"></script>
+	
+	<script src="./axios@1.1.2.min.js"></script>  
+	<script src="./libreria.js"></script>  
+	<script src="./index.js"></script>
+</head>
+
+<body>
+ <div class="container">
+    <h1 style="text-align: center">CONCERTI 2022</h1>
+    <div class="row">
+				
+        <div class="dropdown" id="lstCitta">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+			    Città 
+			</button>
+            <div class="dropdown-menu">
+				<!--  <a class="dropdown-item" href="#">Milano</a>   -->
+            </div>
+        </div>
+        <div class="dropdown" id="lstGeneri">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 
+			    Generi 
+			</button>
+            <div class="dropdown-menu">
+				<!--  <a class="dropdown-item" href="#">Rock</a>   -->
+            </div>
+        </div>
+		       	
+		<table class="table table-hover" style="margin-top:20px">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Cantante</th>
+					<th>Data</th>
+					<th>Genere</th>
+					<th>Città</th>
+					<th>Struttura</th>
+					<th>dettagli</th>
+					<th>prenota</th>
+				</tr>
+			</thead>
+			
+			<tbody>	
+ 
+			</tbody>
+		</table>
+		
+		<div class="form-group" id="divDettagli">
+		</div>
+    </div>
+ </div>
+ 
+</body>
+</html>
