@@ -12,6 +12,7 @@ $(function () {
     let _btnNext = $('button')[1];
 	let _wrapperAdd = $('.wrapper')[1];
 
+
     _btnPrev.disabled = true;
 	
     getArtists();
@@ -99,15 +100,28 @@ $(function () {
         _info.appendChild(div);
 
         div = document.createElement("div");
-        div.innerHTML = `Like = <b>${quadro.nLike}</b>`;
+        const span = document.createElement("span");
+        span.innerHTML = `Like = <b>${quadro.nLike}</b>`;;
+        span.id = "nLike";
+        div.appendChild(span);
         const imgLike = document.createElement("img");
         imgLike.src = "./img/like.jpg";
         imgLike.classList.add("like");
+        imgLike.addEventListener("click", () => {
+            quadro.nLike++;
+            document.getElementById("nLike").innerHTML = `Like = <b>${quadro.nLike}</b>`;
+            let request = inviaRichiesta("PATCH", "/quadri/" + quadro.id, { "nLike": quadro.nLike });
+            request.catch(errore);
+            request.then(function(response){
+                alert("Hai messo un piace a questo quadro");
+            })
+        });
         div.appendChild(imgLike);
         _info.appendChild(div);
 
         //IMG
         const img = document.createElement("img");
+        img.style.width = "200px";
         //se l'immagine non è base64
         if(!quadro.img.startsWith("data:image/"))
             img.src = `./img/${quadro.img}`;
@@ -128,6 +142,40 @@ $(function () {
         else
             _btnNext.disabled = false;
     }
+
+    btnSalva.addEventListener("click", function(){
+        let blob = txtFile.files[0];
+        let title = txtTitolo.value;
+
+        if(!title || !blob)
+            alert("Scegliere un file e assegnare un titolo");
+        else
+        {
+            let promise = base64Convert(blob);
+
+            promise.catch(function(err){ alert("Errore conversione immagine: \n" + err) });
+            promise.then(function(base64Img){
+                let artist = JSON.parse(_head.querySelector("input[type=radio]:checked").getAttribute("data-artista"));
+                console.log(artist.id);
+
+                let quadro = {
+                    "artist": artist.id,
+                    "title": title,
+                    "img": base64Img,
+                    "nLike": 0
+                }
+
+                let request = inviaRichiesta("POST", "/quadri", quadro);
+
+                request.catch(errore);
+                request.then(function(HTTPResponse){
+                    console.log(HTTPResponse);
+                    alert("Quadro inserito correttamente");
+                    showPaintings();
+                })
+            })
+        }
+    })
     
 })
 
@@ -135,3 +183,17 @@ function random(min, max)
 {
     return Math.floor((max-min)*Math.random()) + min;
 }
+
+function base64Convert(blob) {
+    return new Promise(function(resolve, reject){
+    let reader = new FileReader();
+    reader.readAsDataURL(blob);
+    reader.onload = function (event) {
+    resolve(event.target.result); // event.target sarebbe reader
+    };
+    reader.onerror = function (error) {
+    reject(error);
+    };
+    })
+   }
+   
