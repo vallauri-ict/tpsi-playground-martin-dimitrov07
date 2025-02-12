@@ -1,21 +1,66 @@
 {
- "citta": [ 
-	{ "id":"1", "citta":"Milano",  "struttura":"San Siro", "nPosti":50000},
-	{ "id":"2", "citta":"Torino",  "struttura":"Allianz Stadium", "nPosti":40000},
-	{ "id":"3", "citta":"Verona",  "struttura":"Arena",    "nPosti":25000},
-	{ "id":"4", "citta":"Bologna", "struttura":"Stadio Dall'Ara", "nPosti":35000},
-	{ "id":"5", "citta":"Padova",  "struttura":"Stadio Euganeo",  "nPosti":30000},
-	{ "id":"6", "citta":"Firenze", "struttura":"Stadio Artemio Franchi", "nPosti":40000},
-	{ "id":"7", "citta":"Roma",    "struttura":"Stadio Olilpico", "nPosti":50000}
- ],
-
- "generi": [ 
-	{ "id": "1", "genere":"Rock"},
-	{ "id": "2", "genere":"Jazz"},
-	{ "id": "3", "genere":"Pop"},
-	{ "id": "4", "genere":"Blues"}
- ],
-
+  "citta": [
+    {
+      "id": "1",
+      "citta": "Milano",
+      "struttura": "San Siro",
+      "nPosti": 50000
+    },
+    {
+      "id": "2",
+      "citta": "Torino",
+      "struttura": "Allianz Stadium",
+      "nPosti": 40000
+    },
+    {
+      "id": "3",
+      "citta": "Verona",
+      "struttura": "Arena",
+      "nPosti": 25000
+    },
+    {
+      "id": "4",
+      "citta": "Bologna",
+      "struttura": "Stadio Dall'Ara",
+      "nPosti": 35000
+    },
+    {
+      "id": "5",
+      "citta": "Padova",
+      "struttura": "Stadio Euganeo",
+      "nPosti": 30000
+    },
+    {
+      "id": "6",
+      "citta": "Firenze",
+      "struttura": "Stadio Artemio Franchi",
+      "nPosti": 40000
+    },
+    {
+      "id": "7",
+      "citta": "Roma",
+      "struttura": "Stadio Olilpico",
+      "nPosti": 50000
+    }
+  ],
+  "generi": [
+    {
+      "id": "1",
+      "genere": "Rock"
+    },
+    {
+      "id": "2",
+      "genere": "Jazz"
+    },
+    {
+      "id": "3",
+      "genere": "Pop"
+    },
+    {
+      "id": "4",
+      "genere": "Blues"
+    }
+  ],
   "concerti": [
     {
       "id": "1",
@@ -23,12 +68,12 @@
       "data": "11/6/2018",
       "genere": "Rock",
       "sede": {
-		"citta": "Milano",
+        "citta": "Milano",
         "struttura": "San Siro",
         "nPosti": 50000
       },
       "dettagli": "dettagli concerto 1",
-      "postiPrenotati": 1
+      "postiPrenotati": 2
     },
     {
       "id": "2",
@@ -36,7 +81,7 @@
       "data": "12/6/2018",
       "genere": "Rock",
       "sede": {
-		"citta": "Torino",
+        "citta": "Torino",
         "struttura": "Allianz Stadium",
         "nPosti": 40000
       },
@@ -49,7 +94,7 @@
       "data": "13/6/2018",
       "genere": "Rock",
       "sede": {
-		"citta": "Verona",
+        "citta": "Verona",
         "struttura": "Arena",
         "nPosti": 25000
       },
@@ -62,7 +107,7 @@
       "data": "14/6/2018",
       "genere": "Rock",
       "sede": {
-		"citta": "Bologna",
+        "citta": "Bologna",
         "struttura": "Stadio Dall'Ara",
         "nPosti": 35000
       },
@@ -75,7 +120,7 @@
       "data": "15/6/2018",
       "genere": "Rock",
       "sede": {
-		"citta": "Padova",
+        "citta": "Padova",
         "struttura": "Stadio Euganeo",
         "nPosti": 30000
       },
@@ -88,7 +133,7 @@
       "data": "16/6/2018",
       "genere": "Rock",
       "sede": {
-		"citta": "Firenza",
+        "citta": "Firenza",
         "struttura": "Stadio Artemio Franchi",
         "nPosti": 40000
       },
@@ -101,7 +146,7 @@
       "data": "17/6/2018",
       "genere": "Rock",
       "sede": {
-		"citta": "Roma",
+        "citta": "Roma",
         "struttura": "Stadio Olimpico",
         "nPosti": 50000
       },
@@ -114,12 +159,12 @@
       "data": "18/6/2018",
       "genere": "Jazz",
       "sede": {
-		"citta": "Milano",
+        "citta": "Milano",
         "struttura": "San Siro",
         "nPosti": 50000
       },
       "dettagli": "dettagli concerto 8",
-      "postiPrenotati": 0
+      "postiPrenotati": 2
     },
     {
       "id": "9",
@@ -127,7 +172,7 @@
       "data": "19/6/2018",
       "genere": "Jazz",
       "sede": {
-		"citta": "Torino",
+        "citta": "Torino",
         "struttura": "Allianz Stadium",
         "nPosti": 40000
       },
@@ -140,7 +185,7 @@
       "data": "20/6/2018",
       "genere": "Jazz",
       "sede": {
-		"citta": "Verona",
+        "citta": "Verona",
         "struttura": "Arena",
         "nPosti": 25000
       },
@@ -153,7 +198,7 @@
       "data": "21/6/2018",
       "genere": "Jazz",
       "sede": {
-		"citta": "Bologna",
+        "citta": "Bologna",
         "struttura": "Stadio Dall'Ara",
         "nPosti": 35000
       },
@@ -166,7 +211,7 @@
       "data": "22/6/2018",
       "genere": "Jazz",
       "sede": {
-		"citta": "Padova",
+        "citta": "Padova",
         "struttura": "Stadio Euganeo",
         "nPosti": 30000
       },
@@ -179,7 +224,7 @@
       "data": "23/6/2018",
       "genere": "Jazz",
       "sede": {
-		"citta": "Firenza",
+        "citta": "Firenza",
         "struttura": "Stadio Artemio Franchi",
         "nPosti": 40000
       },
@@ -192,7 +237,7 @@
       "data": "24/6/2018",
       "genere": "Jazz",
       "sede": {
-		"citta": "Roma",
+        "citta": "Roma",
         "struttura": "Stadio Olimpico",
         "nPosti": 50000
       },
@@ -205,7 +250,7 @@
       "data": "11/7/2018",
       "genere": "Pop",
       "sede": {
-		"citta": "Milano",
+        "citta": "Milano",
         "struttura": "San Siro",
         "nPosti": 50000
       },
@@ -218,7 +263,7 @@
       "data": "12/7/2018",
       "genere": "Pop",
       "sede": {
-		"citta": "Torino",
+        "citta": "Torino",
         "struttura": "Allianz Stadium",
         "nPosti": 40000
       },
@@ -231,7 +276,7 @@
       "data": "13/7/2018",
       "genere": "Pop",
       "sede": {
-		"citta": "Verona",
+        "citta": "Verona",
         "struttura": "Arena",
         "nPosti": 25000
       },
@@ -244,8 +289,8 @@
       "data": "14/7/2018",
       "genere": "Pop",
       "sede": {
-		"citta": "Bologna",
-		"struttura": "Stadio Dall'Ara",
+        "citta": "Bologna",
+        "struttura": "Stadio Dall'Ara",
         "nPosti": 35000
       },
       "dettagli": "dettagli concerto 18",
@@ -257,7 +302,7 @@
       "data": "15/7/2018",
       "genere": "Pop",
       "sede": {
-		"citta": "Padova",
+        "citta": "Padova",
         "struttura": "Stadio Euganeo",
         "nPosti": 30000
       },
@@ -270,7 +315,7 @@
       "data": "16/7/2018",
       "genere": "Pop",
       "sede": {
-		"citta": "Firenza",
+        "citta": "Firenza",
         "struttura": "Stadio Artemio Franchi",
         "nPosti": 40000
       },
@@ -283,7 +328,7 @@
       "data": "17/7/2018",
       "genere": "Pop",
       "sede": {
-		"citta": "Roma",
+        "citta": "Roma",
         "struttura": "Stadio Olimpico",
         "nPosti": 50000
       },
@@ -296,12 +341,12 @@
       "data": "18/7/2018",
       "genere": "Blues",
       "sede": {
-		"citta": "Milano",
+        "citta": "Milano",
         "struttura": "San Siro",
         "nPosti": 50000
       },
       "dettagli": "dettagli concerto 22",
-      "postiPrenotati": 0
+      "postiPrenotati": 10
     },
     {
       "id": "23",
@@ -309,7 +354,7 @@
       "data": "19/7/2018",
       "genere": "Blues",
       "sede": {
-		"citta": "Torino",
+        "citta": "Torino",
         "struttura": "Allianz Stadium",
         "nPosti": 40000
       },
@@ -322,7 +367,7 @@
       "data": "20/7/2018",
       "genere": "Blues",
       "sede": {
-		"citta": "Verona",
+        "citta": "Verona",
         "struttura": "Arena",
         "nPosti": 25000
       },
@@ -335,7 +380,7 @@
       "data": "21/7/2018",
       "genere": "Blues",
       "sede": {
-		"citta": "Bologna",
+        "citta": "Bologna",
         "struttura": "Stadio Dall'Ara",
         "nPosti": 35000
       },
@@ -348,7 +393,7 @@
       "data": "22/7/2018",
       "genere": "Blues",
       "sede": {
-		"citta": "Verona",
+        "citta": "Verona",
         "struttura": "Arena",
         "nPosti": 25000
       },
@@ -361,7 +406,7 @@
       "data": "23/7/2018",
       "genere": "Blues",
       "sede": {
-		"citta": "Bologna",
+        "citta": "Bologna",
         "struttura": "Stadio Dall'Ara",
         "nPosti": 35000
       },
@@ -374,7 +419,7 @@
       "data": "24/7/2018",
       "genere": "Blues",
       "sede": {
-		"citta": "Padova",
+        "citta": "Padova",
         "struttura": "Stadio Euganeo",
         "nPosti": 30000
       },

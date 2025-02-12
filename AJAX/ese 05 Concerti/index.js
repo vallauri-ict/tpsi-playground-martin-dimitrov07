@@ -8,10 +8,10 @@ $(document).ready(function () {
     
 	$(_divDettagli).hide()    
 
-    getCities();
-    getGenders();
+    GetCities();
+    GetGenders();
 
-    async function getCities()
+    async function GetCities()
     {
         let HTTPResponse = await inviaRichiesta("GET", "/citta").catch(errore);
         let cities = HTTPResponse.data;
@@ -21,7 +21,7 @@ $(document).ready(function () {
         a.href = "#";
         a.textContent = "Tutte";
         _lstCitta.querySelector(".dropdown-menu").appendChild(a);
-        a.addEventListener("click", setNameCity);
+        a.addEventListener("click", SetNameCity);
 
         for (const city of cities) 
         {
@@ -30,18 +30,18 @@ $(document).ready(function () {
             a.href = "#";
             a.textContent = city.citta;
             _lstCitta.querySelector(".dropdown-menu").appendChild(a);
-            a.addEventListener("click", setNameCity);
+            a.addEventListener("click", SetNameCity);
         }
     }
 
-    function setNameCity(){
+    function SetNameCity(){
         _lstCitta.querySelector("button").textContent = this.textContent;
 
         if(_lstGeneri.querySelector("button").textContent != "Generi")
-            getConcerts();
+            GetConcerts();
     }
 
-    async function getGenders(){
+    async function GetGenders(){
         let HTTPResponse = await inviaRichiesta("GET", "/generi").catch(errore);
         let genders = HTTPResponse.data;
 
@@ -50,7 +50,7 @@ $(document).ready(function () {
         a.href = "#";
         a.textContent = "Tutti";
         _lstGeneri.querySelector(".dropdown-menu").appendChild(a);
-        a.addEventListener("click", setNameGender);
+        a.addEventListener("click", SetNameGender);
 
         for (const gender of genders) 
         {
@@ -59,24 +59,106 @@ $(document).ready(function () {
             a.href = "#";
             a.textContent = gender.genere;
             _lstGeneri.querySelector(".dropdown-menu").appendChild(a);
-            a.addEventListener("click", setNameGender);
+            a.addEventListener("click", SetNameGender);
         }
     }
 
-    function setNameGender(){
+    function SetNameGender(){
         _lstGeneri.querySelector("button").textContent = this.textContent;
 
         if(_lstCitta.querySelector("button").textContent != "Città")
-            getConcerts();
+            GetConcerts();
     }
 
-    function getConcerts()
+    function GetConcerts()
     {
         let city = _lstCitta.querySelector("button").textContent;
         let gender =  _lstGeneri.querySelector("button").textContent;
 
-        //DA FINIRE
-        let request = inviaRichiesta("GET", "/concerti");
+        //creato JSON di filtro (IMPORTANTE)
+        let filter = {};
+
+        if(city != "Tutte")
+            filter["sede.citta"] = city;
+
+        if(gender != "Tutti")
+            filter["genere"] = gender;
+
+        let request = inviaRichiesta("GET", "/concerti", filter);
+        request.catch(errore);
+        request.then(function(HTTPResponse){
+            let concerts = HTTPResponse.data;
+            _tbody.innerHTML = "";
+
+            concerts.forEach(concert => {
+                const tr = document.createElement("tr");
+                _tbody.appendChild(tr);
+
+                let td = document.createElement("td");
+                tr.appendChild(td);
+                td.textContent = concert.id;
+
+                td = document.createElement("td");
+                tr.appendChild(td);
+                td.textContent = concert.cantante;
+
+                td = document.createElement("td");
+                tr.appendChild(td);
+                td.textContent = concert.data;
+
+                td = document.createElement("td");
+                tr.appendChild(td);
+                td.textContent = concert.genere;
+
+                td = document.createElement("td");
+                tr.appendChild(td);
+                td.textContent = concert.sede.citta;
+
+                td = document.createElement("td");
+                tr.appendChild(td);
+                td.textContent = concert.postiPrenotati;
+
+                td = document.createElement("td");
+                tr.appendChild(td);
+                let button = document.createElement("button")
+                td.appendChild(button);
+                button.classList.add("btn", "btn-info", "btn-xs");
+                button.textContent = "Dettagli";
+
+                td = document.createElement("td");
+                tr.appendChild(td);
+                button = document.createElement("button")
+                td.appendChild(button);
+                button.classList.add("btn", "btn-success", "btn-xs");
+                button.textContent = "Prenota";
+                button.addEventListener("click", () => {
+                    Prenota(concert);
+                })
+            });
+        })
+    }
+
+    function Prenota(concert)
+    {
+        let nBiglietti = prompt("Inserire il numero di biglietti da prenotare");
+
+        if(nBiglietti && nBiglietti <= 10)
+        {
+            //let postiPrenotati = concert.postiPrenotati + parseInt(nBiglietti);
+            concert.postiPrenotati += parseInt(nBiglietti);
+
+            let request = inviaRichiesta("PATCH", "/concerti/" + concert.id, concert);
+            //let request = inviaRichiesta("PATCH", "/concerti/" + id, {postiPrenotati});
+            request.catch(errore);
+            request.then(HTTPResponse => {
+                let response = HTTPResponse.data;
+                console.log(response);
+                alert("Prenotazione effettuata");
+                GetConcerts();
+            })
+        }
+        else
+            alert("Numero di biglietti non valido");
     }
 
 })
