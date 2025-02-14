@@ -6992,17 +6992,17 @@
     {
       "id": "12",
       "nome": "T6",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "13",
       "nome": "T4",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "14",
       "nome": "T2",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "15",
@@ -7072,7 +7072,7 @@
     {
       "id": "28",
       "nome": "T27",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "29",
@@ -7442,7 +7442,7 @@
     {
       "id": "102",
       "nome": "Q7",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "103",
@@ -7582,12 +7582,12 @@
     {
       "id": "130",
       "nome": "P7",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "131",
       "nome": "P9",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "132",
@@ -7722,17 +7722,17 @@
     {
       "id": "158",
       "nome": "O7",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "159",
       "nome": "O9",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "160",
       "nome": "O11",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "161",
@@ -7752,7 +7752,7 @@
     {
       "id": "164",
       "nome": "O19",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "165",
@@ -7862,22 +7862,22 @@
     {
       "id": "186",
       "nome": "N7",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "187",
       "nome": "N9",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "188",
       "nome": "N11",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "189",
       "nome": "N13",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "190",
@@ -7892,7 +7892,7 @@
     {
       "id": "192",
       "nome": "N19",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "193",
@@ -8002,27 +8002,27 @@
     {
       "id": "214",
       "nome": "M7",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "215",
       "nome": "M9",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "216",
       "nome": "M11",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "217",
       "nome": "M13",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "218",
       "nome": "M15",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "219",
@@ -8192,7 +8192,7 @@
     {
       "id": "252",
       "nome": "L27",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "253",
@@ -8322,22 +8322,22 @@
     {
       "id": "278",
       "nome": "I23",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "279",
       "nome": "I25",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "280",
       "nome": "I27",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "281",
       "nome": "H26",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "282",
@@ -8372,12 +8372,12 @@
     {
       "id": "288",
       "nome": "H12",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "289",
       "nome": "H10",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "290",
@@ -8402,7 +8402,7 @@
     {
       "id": "294",
       "nome": "H1",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "295",
@@ -8422,7 +8422,7 @@
     {
       "id": "298",
       "nome": "H9",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "299",
@@ -8452,17 +8452,17 @@
     {
       "id": "304",
       "nome": "H21",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "305",
       "nome": "H23",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "306",
       "nome": "H25",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "307",
@@ -8497,12 +8497,12 @@
     {
       "id": "313",
       "nome": "G12",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "314",
       "nome": "G10",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "315",
@@ -8537,7 +8537,7 @@
     {
       "id": "321",
       "nome": "G5",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "322",
@@ -8587,7 +8587,7 @@
     {
       "id": "331",
       "nome": "F24",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "332",
@@ -8607,7 +8607,7 @@
     {
       "id": "335",
       "nome": "F16",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "336",
@@ -8637,7 +8637,7 @@
     {
       "id": "341",
       "nome": "F4",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "342",
@@ -8657,7 +8657,7 @@
     {
       "id": "345",
       "nome": "F5",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "346",
@@ -8697,7 +8697,7 @@
     {
       "id": "353",
       "nome": "F21",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "354",
@@ -8722,7 +8722,7 @@
     {
       "id": "358",
       "nome": "E16",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "359",
@@ -8742,7 +8742,7 @@
     {
       "id": "362",
       "nome": "E8",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "363",
@@ -8772,7 +8772,7 @@
     {
       "id": "368",
       "nome": "E5",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "369",
@@ -8782,7 +8782,7 @@
     {
       "id": "370",
       "nome": "E9",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "371",
@@ -8812,7 +8812,7 @@
     {
       "id": "376",
       "nome": "E21",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "377",
@@ -8832,7 +8832,7 @@
     {
       "id": "380",
       "nome": "D16",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "381",
@@ -8852,7 +8852,7 @@
     {
       "id": "384",
       "nome": "D8",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "385",
@@ -8872,7 +8872,7 @@
     {
       "id": "388",
       "nome": "D1",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "389",
@@ -8887,7 +8887,7 @@
     {
       "id": "391",
       "nome": "D7",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "392",
@@ -8922,12 +8922,12 @@
     {
       "id": "398",
       "nome": "D21",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "399",
       "nome": "C20",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "400",
@@ -8957,7 +8957,7 @@
     {
       "id": "405",
       "nome": "C8",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "406",
@@ -8977,7 +8977,7 @@
     {
       "id": "409",
       "nome": "C1",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "410",
@@ -8992,7 +8992,7 @@
     {
       "id": "412",
       "nome": "C7",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "413",
@@ -9027,7 +9027,7 @@
     {
       "id": "419",
       "nome": "B20",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "420",
@@ -9072,7 +9072,7 @@
     {
       "id": "428",
       "nome": "B2",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "429",
@@ -9092,7 +9092,7 @@
     {
       "id": "432",
       "nome": "B7",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "433",
@@ -9122,12 +9122,12 @@
     {
       "id": "438",
       "nome": "B19",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "439",
       "nome": "A20",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "440",
@@ -9172,12 +9172,12 @@
     {
       "id": "448",
       "nome": "A2",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "449",
       "nome": "A1",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "450",
@@ -9197,7 +9197,7 @@
     {
       "id": "453",
       "nome": "A9",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "454",
@@ -9207,7 +9207,7 @@
     {
       "id": "455",
       "nome": "A13",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "456",
@@ -9222,7 +9222,7 @@
     {
       "id": "458",
       "nome": "A19",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     }
   ],
   "spettacolo_5": [
@@ -11469,17 +11469,17 @@
     {
       "id": "449",
       "nome": "A1",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "450",
       "nome": "A3",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "451",
       "nome": "A5",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "452",
@@ -15803,7 +15803,7 @@
     {
       "id": "399",
       "nome": "C20",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "400",
@@ -15903,7 +15903,7 @@
     {
       "id": "419",
       "nome": "B20",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "420",
@@ -16003,7 +16003,7 @@
     {
       "id": "439",
       "nome": "A20",
-      "statoPrenotazione": ""
+      "statoPrenotazione": "booked"
     },
     {
       "id": "440",

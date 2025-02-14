@@ -58,6 +58,9 @@ $(document).ready(function(){
 	let btnAcquista = $(divMappa).children("button")[0]
 			
 	$(divMappa).hide();
+	btnAcquista.disabled = true;	
+
+	let idPoltronePrenotate = [];
 
 	LoadSpectacles();
 
@@ -117,8 +120,32 @@ $(document).ready(function(){
 		titolo.textContent = spectacle.titolo;
 		sottotitolo.textContent = spectacle.data;
 
-		let HTTPRequest = await inviaRichiesta("GET", "/spettacolo_" + spectacle.id);
+		LoadSeats(spectacle.id);
+
+		btnAcquista.addEventListener("click", async function(){
+			let promises = [];
+
+			for (const id of idPoltronePrenotate) {
+				let promise = inviaRichiesta("PATCH", "/spettacolo_" + spectacle.id + "/" + id, {"statoPrenotazione": "booked"});
+				promises.push(promise);
+			}
+
+			Promise.all(promises).then(function(){
+				alert("Prenotazione effettuata con successo!");
+				idPoltronePrenotate = [];
+				LoadSeats(spectacle.id);
+			}).catch(function(){
+				alert("Errore durante la prenotazione!");
+			});
+		});
+	}
+
+	async function LoadSeats(id) 
+	{
+		let HTTPRequest = await inviaRichiesta("GET", "/spettacolo_" + id);
 		const postiSpettacolo = HTTPRequest.data;
+
+		mappa.innerHTML = "";
 		
 		let idPoltrona = 1;
 
@@ -126,6 +153,7 @@ $(document).ready(function(){
 			for (let j = inizioFine[i].inizio; j <= inizioFine[i].fine; j++) {
 				const poltrona = document.createElement("div");
 				poltrona.classList.add("poltrona");
+				poltrona.setAttribute("id", idPoltrona);
 				mappa.appendChild(poltrona);
 
 				const posto = postiSpettacolo.find(posto => posto.id == idPoltrona);
@@ -152,8 +180,25 @@ $(document).ready(function(){
 				poltrona.style.top = posY + "px";
 				idPoltrona++;
 				console.log(j);
+
+				poltrona.addEventListener("click", function(){ 
+					if(poltrona.style.backgroundColor == VERDE)
+					{
+						poltrona.style.backgroundColor = BLU;
+						idPoltronePrenotate.push(this.getAttribute("id"));
+					}
+					else if(poltrona.style.backgroundColor == BLU)
+					{
+						poltrona.style.backgroundColor = VERDE;
+						idPoltronePrenotate.splice(idPoltronePrenotate.indexOf(this.getAttribute("codice")), 1);
+					}
+
+					if(idPoltronePrenotate.length > 0)
+						btnAcquista.disabled = false;
+					else
+						btnAcquista.disabled = true;
+				});
 			}
 		}
-		
 	}
 });
