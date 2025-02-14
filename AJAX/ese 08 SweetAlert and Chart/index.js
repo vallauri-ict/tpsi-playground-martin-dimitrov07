@@ -28,7 +28,21 @@ $(document).ready(function(){
 			"width": "400px",
 			"background": "#cfc",
 			"showCancelButton": true
-		})
+		});
+
+		let nPeople = result.value;
+		let nazioni = [];
+		
+		let request = inviaRichiesta("GET", "/api", { "results": nPeople });
+
+		request.catch(errore);
+		request.then((HTTPResponse) => {
+			let people = HTTPResponse.data;
+
+			for (const person of people) {
+				
+			}
+		});
 	})
 
 })

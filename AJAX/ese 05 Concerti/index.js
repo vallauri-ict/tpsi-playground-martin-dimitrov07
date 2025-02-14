@@ -124,6 +124,7 @@ $(document).ready(function () {
                 td.appendChild(button);
                 button.classList.add("btn", "btn-info", "btn-xs");
                 button.textContent = "Dettagli";
+                button.addEventListener("click", visualizzaDettagli);
 
                 td = document.createElement("td");
                 tr.appendChild(td);
@@ -159,6 +160,31 @@ $(document).ready(function () {
         }
         else
             alert("Numero di biglietti non valido");
+    }
+
+    function visualizzaDettagli()
+    {
+        let id = this.parentNode.parentNode.firstElementChild.textContent;
+
+        let request = inviaRichiesta("GET", "/concerti/" + id);
+
+        request.catch(errore);
+        request.then(function(HTTPResponse){
+            let concert = HTTPResponse.data;
+
+            Swal.fire({
+                title: "Dettagli Concerto",
+                html: `
+                    <span class="swal">Data: </span> <span class="swal">${concert.data}</span><br>
+                    <span class="swal">Città: </span> <span class="swal">${concert.sede.citta}</span><br>
+                    <span class="swal">Struttura: </span> <span class="swal">${concert.sede.struttura}</span><br>
+                    <span class="swal">Posti Liberi: </span> <span class="swal">${concert.sede.nPosti - concert.postiPrenotati}</span><br>
+                    <span class="swal">Dettagli: </span> <span class="swal">${concert.dettagli}</span><br>
+                `,
+                focusConfirm: false, //finestra non modale
+            })
+        })
+
     }
 
 })

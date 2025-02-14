@@ -7,3 +7,13 @@ th, td{
 	text-align: center;
 }
 
+.swal{
+	font-size: 12pt;
+	display: inline-block;
+	padding-top: 12px;
+}
+
+.swal:nth-of-type(even){
+	font-weight: bold !important;
+}
+

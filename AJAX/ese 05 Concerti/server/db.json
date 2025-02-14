@@ -73,7 +73,7 @@
         "nPosti": 50000
       },
       "dettagli": "dettagli concerto 1",
-      "postiPrenotati": 2
+      "postiPrenotati": 3
     },
     {
       "id": "2",
@@ -307,7 +307,7 @@
         "nPosti": 30000
       },
       "dettagli": "dettagli concerto 19",
-      "postiPrenotati": 0
+      "postiPrenotati": 1
     },
     {
       "id": "20",
