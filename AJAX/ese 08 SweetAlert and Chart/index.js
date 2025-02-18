@@ -32,16 +32,44 @@ $(document).ready(function(){
 
 		let nPeople = result.value;
 		let nazioni = [];
-		
+		//{nazione: "italia", "persone": 3}
 		let request = inviaRichiesta("GET", "/api", { "results": nPeople });
 
 		request.catch(errore);
 		request.then((HTTPResponse) => {
-			let people = HTTPResponse.data;
+			let people = HTTPResponse.data.results;
 
 			for (const person of people) {
-				
+				let item = nazioni.find(item => item.nazione == person.location.country);
+				if(item)
+					item.persone++;
+				else
+					nazioni.push({"nazione": person.location.country, "persone": 1});
 			}
+
+			//console.log(nazioni);
+			$("a").eq(0).show();
+			//salvo tabella su disco
+			let json = JSON.stringify(nazioni, null, 2);
+			let blob = new Blob([json], {type: "application/json"});
+			let uriBlob = URL.createObjectURL(blob);
+			$("a").prop("href", uriBlob);
+			//visualizzo tabella
+			$(table).show();
+			table.querySelector("tbody").innerHTML = "";
+			for (const nazione of nazioni) {
+				let tr = document.createElement("tr");
+				let td = document.createElement("td");
+				td.innerHTML = nazione.nazione;
+				tr.appendChild(td);
+				td = document.createElement("td");
+				td.innerHTML = nazione.persone;
+				tr.appendChild(td);
+				table.querySelector("tbody").appendChild(tr);
+			}
+
+			//creazione grafico
+			let keys = nazioni.map(item => item.nazione);
 		});
 	})
 
