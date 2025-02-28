@@ -11,7 +11,7 @@ function inviaRichiesta(method, url, parameters={}) {
 		"headers": {
 			"Accept": "application/json",
 		},
-		"timeout": 5000,
+		"timeout": 8000,
 		"responseType": "json",
 	}
 	if(parameters instanceof FormData){

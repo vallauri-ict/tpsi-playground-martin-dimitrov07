@@ -54,6 +54,7 @@ $(document).ready(function(){
 			let blob = new Blob([json], {type: "application/json"});
 			let uriBlob = URL.createObjectURL(blob);
 			$("a").prop("href", uriBlob);
+
 			//visualizzo tabella
 			$(table).show();
 			table.querySelector("tbody").innerHTML = "";
@@ -69,7 +70,51 @@ $(document).ready(function(){
 			}
 
 			//creazione grafico
-			let keys = nazioni.map(item => item.nazione);
+			let keys = nazioni.map(item => item.nazione); //a ogni iterazione su nazioni fa la funzione (se l'istruzione è una sola riga posso omettere le graffe e il return)
+			let values = nazioni.map(item => item.persone);
+
+			let backgroundColors = [];
+			for (let i = 0; i < keys.length; i++) {
+				backgroundColors.push(`rgb(${Math.random()*256},${Math.random()*256},${Math.random()*256})`);
+			}
+
+			let max = Math.max(...values); //da il massimo valore tra la sequenza di numeri ricevuti (spread operator)
+
+			let chartOptions = {
+				"type": "bar",
+				"data": {
+					"labels": keys, //asse x
+					"datasets": [{ 
+						"label": "Grafico delle nazioni",
+						"data": values,
+						"backgroundColor": backgroundColors,
+						"borderColor": "#000",
+						"borderWidth": 1
+					}]
+				},
+				"options": {
+					"scales": {
+						"y": {
+							//"beginAtZero": true,
+							"suggestedMax": max + 1,
+							"suggestedMin": 0
+						}
+					}
+				}
+			}
+
+			$(canvasContainer).show();
+
+			//prima di creare un nuovo grafico devo distruggere quello precedente
+			if(chart)
+				chart.destroy();
+			
+			chart = new Chart(canvas, chartOptions);
+
+			$("a").eq(1).show().on("click", function(){
+				//salvo
+				this .href = canvas.toDataURL("image/png");
+			});
 		});
 	})
 
