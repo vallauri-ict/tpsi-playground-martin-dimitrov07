@@ -33,7 +33,7 @@ $(document).ready(function(){
 		let nPeople = result.value;
 		let nazioni = [];
 		//{nazione: "italia", "persone": 3}
-		let request = inviaRichiesta("GET", "/api", { "results": nPeople });
+		let request = inviaRichiesta("GET", "https://randomuser.me/api", { "results": nPeople });
 
 		request.catch(errore);
 		request.then((HTTPResponse) => {

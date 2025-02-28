@@ -1,11 +1,9 @@
 "use strict";
-
-const _URL = "https://randomuser.me"
 // Se vuota viene assegnata  l'origine da cui è stata scaricata la pagina
 
 function inviaRichiesta(method, url, parameters={}) {
 	let options={
-		"baseURL":_URL,
+		"baseURL":"",
 		"url":  url, 
 		"method": method.toUpperCase(),
 		"headers": {

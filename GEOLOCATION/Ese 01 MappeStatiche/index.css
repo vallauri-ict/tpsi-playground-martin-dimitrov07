@@ -1,0 +1,29 @@
+h1{
+	 text-align:center;
+	 font-size:25pt;
+	 font-weight:bold;
+}  
+
+#imgBox{
+	 display:block;
+	 margin: 20px auto;
+	 width:800px;
+	 height:600px;
+} 
+
+#btnBox  {
+	 width:560px;
+	 margin: 0 auto;
+}  
+
+#btnBox button{
+	 width:100px;	
+	 height:40px;
+	 margin:6px;
+	 padding:0;
+} 
+
+.active{
+	 background-color:blue;
+	 color:white;
+}	  

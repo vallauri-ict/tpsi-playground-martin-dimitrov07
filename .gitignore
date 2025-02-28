@@ -3,6 +3,10 @@
 # Created by https://www.gitignore.io/api/macos,visualstudiocode,node
 # Edit at https://www.gitignore.io/?templates=macos,visualstudiocode,node
 
+### CHIAVE API per google maps ###
+environment.js
+chiave API Google Maps.txt
+
 ### macOS ###
 # General
 .DS_Store
