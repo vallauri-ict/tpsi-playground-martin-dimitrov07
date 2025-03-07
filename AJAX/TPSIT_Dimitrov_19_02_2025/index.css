@@ -1,0 +1,57 @@
+*{
+	margin:0;
+	padding:0;	
+	box-sizing:content-box;
+}
+
+h2{
+	text-align:center;
+	padding:8px 0 20px 0;
+	font-style:italic;
+}
+
+
+body{
+	background-color:black;
+}
+
+#login, #test{
+	background-color:white;
+	padding:20px 5px;
+}
+
+#login form-group:nth-of-type(3) > button{
+   margin-top:12px;	
+   margin-right:24px;
+   border-radius:8px;
+}
+
+/* *************** login ******************* */
+#lblErrore{
+	margin-top:10px !important;
+	margin-bottom:0 !important;
+}
+
+
+/* *************** test ******************* */
+.elencoDomande p{
+	margin-top:16px;
+	margin-bottom:3px;
+}
+
+.elencoDomande input{
+	margin-right:10px;
+}
+
+.btnInvia{
+	margin:24px 0 10px 0;
+	padding:4px;
+	height:28px;
+	line-height:28px;
+	width:60px;
+	border-radius:8px;
+	font-weight:bold;
+}
+.btnInvia:hover{
+	cursor:pointer;
+}
