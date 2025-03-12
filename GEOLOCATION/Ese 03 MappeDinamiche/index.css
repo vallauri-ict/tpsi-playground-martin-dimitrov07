@@ -1,0 +1,31 @@
+h1{
+	text-align:center;
+	font-size:25pt;
+	font-weight:bold;
+}
+
+
+.mapContainer{
+	width:800px;
+	height:600px;
+	margin:10px auto;		
+}
+
+
+.infoWindow { 
+	padding:0; 
+	text-align:center; 
+	h2{
+		margin-top:0;
+	}
+	img{
+		margin-top:10px;
+	}
+	p { 
+		padding:0; 
+		margin:0;
+	}
+    p:last-of-type {
+		margin-bottom:10px 
+	}
+}
