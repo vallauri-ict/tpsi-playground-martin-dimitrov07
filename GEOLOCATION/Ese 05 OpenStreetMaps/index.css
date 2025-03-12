@@ -1,0 +1,22 @@
+h1{
+	text-align:center;
+	font-size:25pt;
+	font-weight:bold;
+}
+
+
+#mapContainer{
+	width:800px;
+	height:600px;
+	margin:10px auto;		
+}
+
+
+.marker {
+        /* display: block; */      
+        padding: 0;
+		background-position:center;
+		background-size:contain;
+        border-radius: 50%;
+        cursor: pointer;
+}
